@@ -4,7 +4,6 @@ import _ from "lodash"
 import { Box, ResponsiveContext } from "grommet"
 
 import App from "../components/layout"
-import Map from "../components/map"
 import Section from "../components/section"
 import Posts from "../components/posts"
 import { coordinates, capitalize } from "../tools"
@@ -16,7 +15,6 @@ function List({ pageContext }) {
     <App title={`ReasonsToSmile - ${capitalize(title)}`}>
       {type !== `tag` && (
         <Box alignSelf="center" margin={{ vertical: `small` }}>
-          <Map cities={coords} zoom={3} center={_.sample(coords).coordinates} />
         </Box>
       )}
       <ResponsiveContext.Consumer>
