@@ -12,7 +12,34 @@ import VisibilitySensor from "react-visibility-sensor"
 import App from "../components/layout"
 import Posts from "../components/posts"
 import Section from "../components/section"
+import Seo from "../components/seo"
 import { flatten, groupBy, coordinates, calculateTotals } from "../tools"
+
+const Stat = ({ title, icon: Icon, counter }) => (
+  <Box margin="none" align="center">
+    <Icon size="xlarge" />
+    <Heading level="4">{title}</Heading>
+    {counter}
+  </Box>
+)
+
+const Sensor = ({ onChange, children }) => {
+  const size = useContext(ResponsiveContext)
+  if (size === `small`) {
+    return null
+  }
+  // TODO improve this to be more modular
+  // Receive an object with the info and recreate the stats etc
+  return (
+    <VisibilitySensor
+      onChange={e => onChange(e)}
+      offset={{ top: 10 }}
+      delayedCall
+    >
+      {children}
+    </VisibilitySensor>
+  )
+}
 
 const IndexPage = ({ data }) => {
   const [didViewCountUp, setViewCountUp] = useState(false)
@@ -24,6 +51,7 @@ const IndexPage = ({ data }) => {
   const countries = _.uniq(nodes.map(post => post.frontmatter.country)).length
   return (
     <>
+      <Seo postImage={data.file.childImageSharp.fluid.src} />
       <App>
         <Section title="Featured articles">
           <Posts posts={featured} />
