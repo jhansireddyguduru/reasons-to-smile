@@ -44,7 +44,7 @@ App.propTypes = {
 
 App.defaultProps = {
   children: null,
-  title: `ResonsToSmile blog`,
+  title: `ReasonsToSmile blog`,
 }
 
 export default App
