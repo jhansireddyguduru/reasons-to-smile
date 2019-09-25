@@ -47,7 +47,7 @@ Taking public transit to see the Golden Gate Bridge is highly recommended, as pa
 
 If you are lucky and see it under a sunny full clear sky, this bridge is really amazing! It is worth it!
 
-<rehype-image src="gate2.jpg"></rehype-image>
+<rehype-image src="square2.jpg"></rehype-image>
 
 # Lombard Street
 
@@ -63,7 +63,7 @@ While walking, make sure to stop at Lombard Street (located south of Russian Hil
 The history of Lombard Street is worth knowing. During the 1920s, people in San Francisco were beginning to drive around in automobiles, but many of the hills were too steep to navigate. A local man named Carl Henry came up with the idea of using a curved street to help vehicles move downhill, although it would mean several sharp turns. An engineer named Clyde Healy created the design, and overall the hill’s slope went from 27% to 16%. Now you can watch the cars and bikers navigate the sharp turns as tourists gawk at them.
 The zig zagged Lombard Street full of cars and pink flowers is a must-see on a sunny day.
 
-<rehype-image src="mystery2.jpg"></rehype-image>
+<rehype-image src="mystery1.jpg"></rehype-image>
 
 # Tresure Island
 
