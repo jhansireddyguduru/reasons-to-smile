@@ -7,7 +7,7 @@ cover: "./cover.jpg"
 country: "France"
 type: "article"
 duration: 2
-featured: true
+featured: false
 itinerary: ["Central Amsterdam", "Zaanse Schans", "Dam Square", "Rijks Museum"]
 km: 300
 coordinates: [
