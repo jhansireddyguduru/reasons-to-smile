@@ -1,9 +1,9 @@
 module.exports = {
   title: `reasonstosmile Blog`,
-  url: `https://reasonstosmile.blog`,
+  url: `https://reasons-to-smile.netlify.com`,
   description: `This is my lifestyle blog to include information about my crafts, paintings, traveling to new places, and finding out interesting adventures and take casual photos`,
   twitter: `jhansireddygud1`,
-  instagram: `reddy4564`,
+  instagram: `guduru_jhansi_reddy`,
   email: `jhansireddyguduru@gmail.com`,
   github: `jhansireddyguduru/reasons-to-smile`,
   facebook: `jhansireddyguduru`,

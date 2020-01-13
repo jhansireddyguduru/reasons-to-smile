@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Grommet, Box, ResponsiveContext } from "grommet"
 import "typeface-indie-flower"
@@ -9,19 +9,24 @@ import { customTheme } from "../theme"
 import Instafeed from "./instafeed"
 import Header from "./header"
 import Footer from "./footer"
+import Sidebar from "./sidebar"
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `
 
 const App = ({ title, children }) => {
+  const [showSidebar, setSidebar] = useState(false)
   return (
     <Grommet theme={customTheme}>
       <FullGlobalStyle />
       <Box full>
         <Header
-        title = {title}
+          showSidebar={showSidebar}
+          toggleSidebar={setSidebar}
+          title={title}
         />
+        {showSidebar && <Sidebar toggleSidebar={setSidebar} />}
         {children}
         <ResponsiveContext.Consumer>
           {size => size !== `small` && <Instafeed />}
@@ -39,7 +44,7 @@ App.propTypes = {
 
 App.defaultProps = {
   children: null,
-  title: `ResonsToSmile blog`,
+  title: `ReasonsToSmile blog`,
 }
 
 export default App

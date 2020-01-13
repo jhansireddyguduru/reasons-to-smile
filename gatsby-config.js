@@ -2,31 +2,59 @@ require(`dotenv`).config()
 const config = require(`./src/config`)
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: config.title,
+    siteUrl: config.url,
+    description: config.description,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/md`,
+        name: `pages`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-rehype-images`,
+            options: {
+              tag: `rehype-image`,
+              quality: 80,
+              maxWidth: 2112,
+              toFormat: `WEBP`,
+              srcSetBreakpoints: [1056 / 4, 1056 / 2, 1056],
+            },
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: 100,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `ReasonsToSmile blog`,
+        short_name: `ReasonsToSmile`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fafafa`,
+        theme_color: `#EEEEEE`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -36,6 +64,9 @@ module.exports = {
         access_token: process.env.IG_ACCESS_TOKEN,
         instagram_id: config.instagram_id,
       },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
